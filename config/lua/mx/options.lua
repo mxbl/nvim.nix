@@ -10,7 +10,7 @@ opt.guicursor = ""
 opt.nu = true
 opt.relativenumber = true
 opt.cursorline = true
-opt.cursorlineopt = "number"
+opt.cursorlineopt = "screenline,number"
 
 opt.errorbells = false
 opt.showcmd = false

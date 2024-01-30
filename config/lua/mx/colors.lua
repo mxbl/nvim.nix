@@ -15,13 +15,13 @@ color.new('limegreen', '#6dfc18')
 --     disable_background = true
 -- })
 
---require('colorbuddy').colorscheme 'gruvbuddy'
+require('colorbuddy').colorscheme 'gruvbuddy'
 require('colorizer').setup()
 
 Group.new('Whitespace', c.darkgray0, nil, nil)
 Group.new('NonText', c.darkgray0, nil, nil)
 
---Group.new('CursorLine', nil, c.darkgray)
+Group.new('CursorLine', nil, c.darkgray)
 Group.new('SignColumn', nil, nil, nil)
 --Group.new('Comment', c.darkgray2, nil, nil)
 Group.new('Normal', nil, nil, nil)
@@ -34,20 +34,20 @@ Group.new('TelescopeTitle', c.lightblue, nil, nil)
 
 -- NOTE: needs to stay golang does not use lsp.type.* why?
 --   lua and rust do
---Group.new('@variable', c.superwhite, nil)
---Group.new('@parameter', c.superwhite, nil)
---Group.new('@lsp.type.variable', c.superwhite, nil)
---Group.new('@lsp.type.parameter', c.superwhite, nil)
+Group.new('@variable', c.superwhite, nil)
+Group.new('@parameter', c.superwhite, nil)
+Group.new('@lsp.type.variable', c.superwhite, nil)
+Group.new('@lsp.type.parameter', c.superwhite, nil)
 
---Group.new('@function.bracket', g.Normal, g.Normal)
---Group.new('@variable.builtin', c.purple:light():light(), g.Normal)
+Group.new('@function.bracket', g.Normal, g.Normal)
+Group.new('@variable.builtin', c.purple:light():light(), g.Normal)
 --Group.new('WinSeparator', nil, nil)
 
 --Group.new('TabLine', nil, c.darkgray2, nil)
 --Group.new('VertSplit', nil, nil, nil)
 --Group.new('TabLineFill', nil, nil, nil)
 
---vim.cmd [[highlight link @function.call.lua LuaFunctionCall]]
+vim.cmd [[highlight link @function.call.lua LuaFunctionCall]]
 
 --Group.new("CmpItemAbbr", c.lightblue:light(), nil, nil)
 --Group.new("CmpItemAbbrMatch", g.CmpItemAbbr.fg:dark(), nil, s.underline)
@@ -57,3 +57,6 @@ Group.new('TelescopeTitle', c.lightblue, nil, nil)
 --Group.new("CmpItemMenu", g.NonText)
 
 --Group.new('LspInlayHints', c.lightblue:dark(), nil, nil)
+
+--Group.new('LirFloatNormal', nil, nil, nil)
+--Group.new('LirFloatCurdirWindowNormal', nil, nil, nil)

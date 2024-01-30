@@ -1,5 +1,13 @@
 vim.g.mapleader = " "
 
+require'nvim-treesitter.configs'.setup {
+  highlight = { enable = true },
+  indent = { enable = true },
+  rainbow = { enable = true },
+}
+
+require'treesitter-context'.setup()
+
 require'telescope'.setup({})
 
 local builtin = require "telescope.builtin"
@@ -12,4 +20,5 @@ vim.keymap.set('n', '<C-k>', function() nav('k') end, {})
 vim.keymap.set('n', '<C-l>', function() nav('l') end, {})
 
 require 'mx.options'
+require 'mx.lir'
 require 'mx.colors'
