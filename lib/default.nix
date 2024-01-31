@@ -1,6 +1,7 @@
 { pkgs }:
 
 let
+
 plugins = import ./plugins.nix { inherit pkgs; };
 
 mxNvimPlugin = pkgs.vimUtils.buildVimPlugin {
@@ -17,8 +18,9 @@ gruvbuddy = pkgs.vimUtils.buildVimPlugin {
 };
 
 init = ''
-:lua require('mx')
+  :lua require('mx')
 '';
+
 in
 
 pkgs.wrapNeovim pkgs.neovim {
