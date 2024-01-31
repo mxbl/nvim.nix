@@ -14,6 +14,14 @@ require'telescope'.setup({})
 
 local builtin = require "telescope.builtin"
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>pw', function()
+  builtin.grep_string({
+    search = vim.fn.expand("<cword>"),
+  })
+end, {})
+
+vim.keymap.set('n', ',h', builtin.help_tags, {})
 
 local nav = require'mx.tmux'.navigate
 vim.keymap.set('n', '<C-h>', function() nav('h') end, {})
@@ -26,3 +34,6 @@ require 'mx.lir'
 require 'mx.colors'
 require 'mx.git'
 require 'mx.comments'
+require 'mx.languages'
+
+require 'mx.lsp'.init()

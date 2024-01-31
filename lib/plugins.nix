@@ -21,16 +21,27 @@ let
 in
 
 [
-  colorbuddy-nvim
-  nvim-colorizer-lua
-  telescope-nvim
+  # telescope
   plenary-nvim
+  telescope-nvim
+
+  # treesitter
   nvim-treesitter.withAllGrammars
   nvim-treesitter-context
-  lir-nvim
+
+  # theme and colors
+  colorbuddy-nvim
+  nvim-colorizer-lua
   nvim-web-devicons
+  gruvbuddy
+
+  lir-nvim
   gitsigns-nvim
   neogit
-  gruvbuddy
   comment
+
+  nvim-lspconfig
+  copilot-lua
+  go-nvim
+  fidget-nvim
 ]
