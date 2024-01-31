@@ -11,4 +11,6 @@ with pkgs.vimPlugins;
   nvim-treesitter-context
   lir-nvim
   nvim-web-devicons
+  gitsigns-nvim
+  neogit
 ]

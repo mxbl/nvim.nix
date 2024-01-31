@@ -6,7 +6,9 @@ require'nvim-treesitter.configs'.setup {
   rainbow = { enable = true },
 }
 
-require'treesitter-context'.setup()
+require'treesitter-context'.setup({
+  max_lines = 1,
+})
 
 require'telescope'.setup({})
 
@@ -22,3 +24,4 @@ vim.keymap.set('n', '<C-l>', function() nav('l') end, {})
 require 'mx.options'
 require 'mx.lir'
 require 'mx.colors'
+require 'mx.git'
