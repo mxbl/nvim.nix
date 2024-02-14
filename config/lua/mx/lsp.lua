@@ -45,6 +45,7 @@ local language_servers = {
       },
     }
   },
+  hls = {},
 }
 
 local function init()
@@ -83,6 +84,11 @@ require'fidget'.setup {
     window = {
       winblend = 10,
       relative = "editor",
+    },
+  },
+  progress = {
+    display = {
+      progress_ttl = 10,
     },
   },
 }

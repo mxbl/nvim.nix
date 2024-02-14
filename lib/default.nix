@@ -18,6 +18,7 @@ let
     # language servers
     gopls
     lua-language-server
+    haskell-language-server
     rust-analyzer
     nil
 
