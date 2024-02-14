@@ -27,6 +27,8 @@ Group.new('SignColumn', nil, nil, nil)
 Group.new('Normal', nil, nil, nil)
 Group.new('LineNr', c.darkgray2, nil, nil)
 
+Group.new('DiagnosticHint', c.darkgray0, nil, nil)
+
 -- Telescope
 Group.new('TelescopeNormal', c.superwhite, nil, nil)
 Group.new('TelescopeBorder', c.darkgray0, nil, nil)
