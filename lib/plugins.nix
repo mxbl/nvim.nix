@@ -39,9 +39,11 @@ in
   gitsigns-nvim
   neogit
   comment
+  nvim-surround
 
   nvim-lspconfig
   copilot-lua
   go-nvim
+  rust-tools-nvim
   fidget-nvim
 ]

@@ -29,6 +29,8 @@ vim.keymap.set('n', '<C-j>', function() nav('j') end, {})
 vim.keymap.set('n', '<C-k>', function() nav('k') end, {})
 vim.keymap.set('n', '<C-l>', function() nav('l') end, {})
 
+require'nvim-surround'.setup()
+
 require 'mx.options'
 require 'mx.lir'
 require 'mx.colors'

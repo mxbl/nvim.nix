@@ -20,6 +20,7 @@ let
     lua-language-server
     haskell-language-server
     rust-analyzer
+    rustfmt
     nil
 
     # formatters
