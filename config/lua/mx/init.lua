@@ -31,11 +31,17 @@ vim.keymap.set('n', '<C-l>', function() nav('l') end, {})
 
 require'nvim-surround'.setup()
 
+require 'mx.globals'
 require 'mx.options'
 require 'mx.lir'
 require 'mx.colors'
+require 'mx.statusline'
 require 'mx.git'
 require 'mx.comments'
 require 'mx.languages'
 
 require 'mx.lsp'.init()
+
+vim.cmd([[
+  autocmd TermOpen * setlocal nonumber norelativenumber
+]])

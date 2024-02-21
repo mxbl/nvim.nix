@@ -18,6 +18,13 @@ let
       hash = "sha256-+dF1ZombrlO6nQggufSb0igXW5zwU++o0W/5ZA07cdc=";
     };
   };
+  expressline = buildVimPlugin {
+    name = "el";
+    src = pkgs.fetchgit {
+      url = "https://github.com/tjdevries/express_line.nvim";
+      hash = "sha256-1VwcjgN+YJMidHKVXGAb0e90TGGoCsCJ7oiHvzOtIdc=";
+    };
+  };
 in
 
 [
@@ -29,11 +36,12 @@ in
   nvim-treesitter.withAllGrammars
   nvim-treesitter-context
 
-  # theme and colors
+  # appearance
   colorbuddy-nvim
   nvim-colorizer-lua
   nvim-web-devicons
   gruvbuddy
+  expressline
 
   lir-nvim
   gitsigns-nvim
@@ -46,4 +54,5 @@ in
   go-nvim
   rust-tools-nvim
   fidget-nvim
+  lsp-status-nvim
 ]

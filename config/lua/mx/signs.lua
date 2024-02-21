@@ -10,6 +10,7 @@ local Group = require("colorbuddy.group").Group
 
 Group.new("GitSignsAdd", c.green:light())
 Group.new("GitSignsChange", c.yellow:light())
+Group.new("GitSignsUntracked", c.cyan:light())
 Group.new("GitSignsDelete", c.red)
 
 signs.setup {
@@ -19,6 +20,7 @@ signs.setup {
     delete = { hl = "GitSignsDelete", text = "_" },
     topdelete = { hl = "GitSignsDelete", text = "‾" },
     changedelete = { hl = "GitSignsDelete", text = "~" },
+    untracked = { hl = "GitSignsUntracked" },
   },
 
   -- Highlights just the number part of the number column
