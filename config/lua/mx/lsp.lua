@@ -5,17 +5,31 @@ local rust_tools = require 'rust-tools'
 local function on_attach(cli, buf)
   local opts = { buffer = buf, remap = false }
 
+  if cli.name == "gopls" or cli.name == "rust_analyzer" then
+    require'inlay-hints'.on_attach(cli, buf)
+  end
+
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
   vim.keymap.set('n', 'cr', vim.lsp.buf.rename, opts)
   vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, opts)
 end
 
+local inlay = require'mx.inlay'
+
 local language_servers = {
   gopls = {
     settings = {
       gopls = {
-        gofumpt = true,
+        hints = inlay and {
+          assignVariableTypes = true,
+          compositeLiteralFields = true,
+          compositeLiteralTypes = true,
+          constantValues = true,
+          functionTypeParameters = true,
+          parameterNames = true,
+          rangeVariableTypes = true,
+        },
       },
     },
   },
@@ -62,7 +76,13 @@ local function init()
   }
 
   rust_tools.setup {
+    tools = {
+      inlay_hints = {
+        auto = false,
+      },
+    },
     server = {
+      on_attach = on_attach,
       settings = {
         ['rust-analyzer'] = {
           cargo = {

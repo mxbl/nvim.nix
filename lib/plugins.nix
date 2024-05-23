@@ -25,6 +25,13 @@ let
       hash = "sha256-1VwcjgN+YJMidHKVXGAb0e90TGGoCsCJ7oiHvzOtIdc=";
     };
   };
+  inlayhints = buildVimPlugin {
+    name = "inlay-hints";
+    src = pkgs.fetchgit {
+      url = "https://github.com/simrat39/inlay-hints.nvim";
+      hash = "sha256-cDWx08N+NhN5Voxh8f7RGzerbAYB5FHE6TpD4/o/MIQ=";
+    };
+  };
 in
 
 [
@@ -55,4 +62,5 @@ in
   rust-tools-nvim
   fidget-nvim
   lsp-status-nvim
+  inlayhints
 ]

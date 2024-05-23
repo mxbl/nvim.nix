@@ -38,10 +38,13 @@ require 'mx.colors'
 require 'mx.statusline'
 require 'mx.git'
 require 'mx.comments'
-require 'mx.languages'
 
 require 'mx.lsp'.init()
+-- require 'mx.languages'
+
 
 vim.cmd([[
-  autocmd TermOpen * setlocal nonumber norelativenumber
+  autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no
+  autocmd TermOpen * startinsert
+  autocmd BufWinEnter,WinEnter term://* startinsert
 ]])

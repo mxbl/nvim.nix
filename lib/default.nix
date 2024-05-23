@@ -1,18 +1,23 @@
 { pkgs }:
 
 let
-  plugins = import ./plugins.nix { inherit pkgs; };
+  #plugins = import ./plugins.nix { inherit pkgs; };
 
-  mxNvimPlugin = pkgs.vimUtils.buildVimPlugin {
-    name = "mx";
-    src = ../config;
-  };
+  #mxNvimPlugin = pkgs.vimUtils.buildVimPlugin {
+  #  name = "mx";
+  #  src = ../config;
+  #};
 
-  init = ''
-    :lua require('mx')
-  '';
+  #init = ''
+  #  :lua require('mx')
+  #'';
 
   extraPackages = with pkgs; [
+    cargo
+    cargo-deny
+    cargo-edit
+    cargo-watch
+    gcc
     go
 
     # language servers
@@ -20,8 +25,8 @@ let
     lua-language-server
     haskell-language-server
     rust-analyzer
-    rustfmt
     nil
+    lexical
 
     # formatters
     nixpkgs-fmt
@@ -32,10 +37,10 @@ let
 in
 
 pkgs.wrapNeovim pkgs.neovim {
-  configure = {
-    customRC = init;
-    packages.all.start = plugins ++ [ mxNvimPlugin ];
-  };
+  #configure = {
+  #  customRC = init;
+  #  packages.all.start = plugins ++ [ mxNvimPlugin ];
+  #};
   extraMakeWrapperArgs = ''--suffix PATH : "${pkgs.lib.makeBinPath extraPackages}"'';
   withNodeJs = true;
 }
